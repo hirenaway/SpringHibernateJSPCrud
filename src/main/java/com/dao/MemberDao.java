@@ -26,7 +26,9 @@ public class MemberDao {
 		return this.hibernateTemplate.get(Member.class, id);
 	}
 
+	@SuppressWarnings("deprecation")
 	public List<Member> getAllMember() {
+		@SuppressWarnings("unchecked")
 		List<Member> members = (List<Member>) this.hibernateTemplate.find("From Member");
 		return members;
 	}
